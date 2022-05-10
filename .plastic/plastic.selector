@@ -1,0 +1,4 @@
+repository "Space Game@CS247G@cloud"
+  path "/"
+    br "/main"
+    co "/main"
