@@ -2,7 +2,8 @@
 using UnityEngine;
 
 public class PackageController : Draggable {
-    [SerializeField] private DialogueItem onPackageDropped;
+    [SerializeField] private DialogueItem onPackageDeliveredText;
+    [SerializeField] private DialogueItem onPackageDestroyedText;
     [SerializeField, Range(0f, 1f)] private float enterSpeed;
     private bool _pickedUp;
 
@@ -37,8 +38,14 @@ public class PackageController : Draggable {
     private void OnDrop(RegionController region) {
         if (region != null) {
             Debug.Log($"Dropped package in {region.name}!");
-            TextboxManager.Instance.CreateText(onPackageDropped);
-            Destroy(gameObject);
+
+            if (region.RegionId == "deliver") {
+                TextboxManager.Instance.CreateText(onPackageDeliveredText);
+                Destroy(gameObject);
+            } else if (region.RegionId == "destroy") {
+                TextboxManager.Instance.CreateText(onPackageDestroyedText);
+                Destroy(gameObject);
+            }
         }
     }
 

@@ -5,7 +5,6 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 public class ButtonController : Interactable {
-    [SerializeField] private GameObject packagePrefab;
     [SerializeField] private Sprite button;
     [SerializeField] private Sprite pressedButton;
 
@@ -29,7 +28,7 @@ public class ButtonController : Interactable {
 
         if (Input.GetMouseButtonUp(0)) { 
             if (_hovered && _pressed) {
-                SpawnPackage();
+                OnButtonPressed();
             }
             _pressed = false;
         }
@@ -37,9 +36,12 @@ public class ButtonController : Interactable {
         sprite.sprite = _hovered && _pressed ? pressedButton : button;
     }
 
-    private void SpawnPackage() {
+    private void OnButtonPressed() {
         if (FindObjectOfType<PackageController>() == null) {
-            Instantiate(packagePrefab, new Vector2(0, 18f), Quaternion.identity);
+            GameObject nextPackage = PackageData.Instance.GetNextPackage();
+            if (nextPackage == null) return;
+            
+            Instantiate(nextPackage, new Vector2(0f, 18f), Quaternion.identity);
         }
     }
 }
