@@ -1,11 +1,13 @@
 ﻿
 using UnityEngine;
+using System;
 
 public class PackageController : Draggable {
     [SerializeField] private DialogueItem onPackageDeliveredText;
     [SerializeField] private DialogueItem onPackageDestroyedText;
     [SerializeField, Range(0f, 1f)] private float enterSpeed;
     private bool _pickedUp;
+    [SerializeField] String flag; 
 
     private RegionController _currentRegion;
     private RegionController CurrentRegion {
@@ -41,9 +43,15 @@ public class PackageController : Draggable {
 
             if (region.RegionId == "deliver") {
                 TextboxManager.Instance.CreateText(onPackageDeliveredText);
+                if (flag == "decisionOne") {
+                    PackageData.Instance.decisionOne = true;
+                }
                 Destroy(gameObject);
             } else if (region.RegionId == "destroy") {
                 TextboxManager.Instance.CreateText(onPackageDestroyedText);
+                if (flag == "decisionOne") {
+                    PackageData.Instance.decisionOne = false;
+                }
                 Destroy(gameObject);
             }
         }

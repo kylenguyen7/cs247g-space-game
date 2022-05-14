@@ -52,12 +52,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6160374264157875991, guid: 186461c7605c7f844970e99a3060e67c, type: 3}
+      propertyPath: flag
+      value: decisionOne
+      objectReference: {fileID: 0}
+    - target: {fileID: 6160374264157875991, guid: 186461c7605c7f844970e99a3060e67c, type: 3}
       propertyPath: onPackageDeliveredText
       value: 
       objectReference: {fileID: 11400000, guid: 2b1cabbb420034493afad6248fcb9928, type: 2}
     - target: {fileID: 6160374264157875996, guid: 186461c7605c7f844970e99a3060e67c, type: 3}
       propertyPath: m_Name
-      value: Letter
+      value: 2.4 Letter
       objectReference: {fileID: 0}
     - target: {fileID: 6160374264580480576, guid: 186461c7605c7f844970e99a3060e67c, type: 3}
       propertyPath: m_Sprite
