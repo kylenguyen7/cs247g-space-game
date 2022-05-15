@@ -6,6 +6,8 @@ public class PackageController : Draggable {
     [SerializeField] private DialogueItem onPackageDeliveredText;
     [SerializeField] private DialogueItem onPackageDestroyedText;
     [SerializeField, Range(0f, 1f)] private float enterSpeed;
+    [SerializeField] private AudioClip onPackageDestroyedSfx;
+    [SerializeField] private AudioClip onPackageDeliveredSfx;
     private bool _pickedUp;
     [SerializeField] String flag; 
 
@@ -42,12 +44,14 @@ public class PackageController : Draggable {
             Debug.Log($"Dropped package in {region.name}!");
 
             if (region.RegionId == "deliver") {
+                GlobalAudio.Source.PlayOneShot(onPackageDeliveredSfx);
                 TextboxManager.Instance.CreateText(onPackageDeliveredText);
                 if (flag == "decisionOne") {
                     PackageData.Instance.decisionOne = true;
                 }
                 Destroy(gameObject);
             } else if (region.RegionId == "destroy") {
+                GlobalAudio.Source.PlayOneShot(onPackageDestroyedSfx);
                 TextboxManager.Instance.CreateText(onPackageDestroyedText);
                 if (flag == "decisionOne") {
                     PackageData.Instance.decisionOne = false;

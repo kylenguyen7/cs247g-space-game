@@ -3,7 +3,11 @@ guid: e23344a1f1cb2d74cb2ae30648116d79
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - image: {instanceID: 0}
+  - nameField: {instanceID: 0}
+  - textField: {instanceID: 0}
+  - onChatSfx: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

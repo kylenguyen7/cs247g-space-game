@@ -100,6 +100,9 @@ MonoBehaviour:
   onPackageDeliveredText: {fileID: 0}
   onPackageDestroyedText: {fileID: 11400000, guid: 7d0e640d0d5595749b5914498c840788, type: 2}
   enterSpeed: 0.1
+  onPackageDestroyedSfx: {fileID: 8300000, guid: 23b95076919f14ac4b38430a30c9975a, type: 3}
+  onPackageDeliveredSfx: {fileID: 8300000, guid: d3524c2fced0a4850bfaf0191d2ecd10, type: 3}
+  flag: 
 --- !u!1 &6160374264580480578
 GameObject:
   m_ObjectHideFlags: 0

@@ -368,6 +368,8 @@ MonoBehaviour:
   textField: {fileID: 5797958109923481501}
   defaultTypeDelay: 0.075
   fastTypeDelay: 0.03
+  onChatSfx1: {fileID: 8300000, guid: eec8fc615c8dd48f48b628bd9bc0a947, type: 3}
+  onChatSfx2: {fileID: 8300000, guid: 673a5321dd18941aeba32e75f725ecac, type: 3}
 --- !u!1 &5797958111074976291
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,6 +11,9 @@ public class TextboxController : MonoBehaviour {
     [SerializeField] private TextMeshProUGUI textField;
     [SerializeField] private float defaultTypeDelay;
     [SerializeField] private float fastTypeDelay;
+    [SerializeField] private AudioClip onChatSfx1;
+    [SerializeField] private AudioClip onChatSfx2;
+
     
     private String _text;
     private String _currentText;
@@ -35,6 +38,13 @@ public class TextboxController : MonoBehaviour {
 
     private IEnumerator TypeText() {
         while (CurrentText.Length < _text.Length) {
+            if (CurrentText.Length % 2 == 0 ){
+                if (UnityEngine.Random.Range(1, 3) >= 1.5){
+                    GlobalAudio.Source.PlayOneShot(onChatSfx1);
+                } else {
+                    GlobalAudio.Source.PlayOneShot(onChatSfx2);
+                }
+            }
             CurrentText += _text[CurrentText.Length];
             yield return new WaitForSeconds(Input.GetMouseButton(0) ? fastTypeDelay : defaultTypeDelay);
         }

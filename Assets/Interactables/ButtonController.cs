@@ -9,6 +9,7 @@ public class ButtonController : Interactable {
     [SerializeField] private Sprite pressedButton;
     [SerializeField] private AudioClip onButtonDownSfx;
     [SerializeField] private AudioClip onButtonUpSfx;
+    [SerializeField] private AudioClip onPackageEnterSfx;
 
     private bool _hovered;
     private bool _pressed;
@@ -41,7 +42,7 @@ public class ButtonController : Interactable {
 
     private void OnButtonPressed() {
         GlobalAudio.Source.PlayOneShot(onButtonUpSfx);
-        
+        GlobalAudio.Source.PlayOneShot(onPackageEnterSfx);
         if (FindObjectOfType<PackageController>() == null) {
             GameObject nextPackage = PackageData.Instance.GetNextPackage();
             if (nextPackage == null) return;
