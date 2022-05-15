@@ -8,7 +8,8 @@ public class PackageData : MonoBehaviour {
     public bool decisionOne;
     public bool decisionTwo;
     public static PackageData Instance;
-    [System.Serializable] 
+    
+    [Serializable] 
     public struct PackagePair{
         public GameObject a;
         public GameObject b;
@@ -34,55 +35,30 @@ public class PackageData : MonoBehaviour {
 
     public GameObject GetNextPackage() {
         if (_currentPackageIndex == currPackages.Count) {
-            List<PackagePair> tempPackages = currPackages;
-            if (tempPackages == dayOnePackages) {
+            _currentPackageIndex = 0;
+            if (currPackages == dayOnePackages) {
                 currPackages = dayTwoPackages;
-                _currentPackageIndex = 0;
-            } if (tempPackages == dayTwoPackages && decisionOne) {
-                currPackages = dayThreeAPackages;
-                _currentPackageIndex = 0;
-            } if (tempPackages == dayTwoPackages && !decisionOne) {
-                currPackages = dayThreeBPackages;
-                _currentPackageIndex = 0;
+            } else if (currPackages == dayTwoPackages) {
+                currPackages = decisionOne ? dayThreeAPackages : dayThreeBPackages;
             } else {
                 return null;
             }
         }
-        GameObject result;
-        if (currPackages[_currentPackageIndex].flag == "") {
-            
-            result = currPackages[_currentPackageIndex].a;
-            _currentPackageIndex++;
-            return result;
+        
+        GameObject result = CalculateNextPackage();
+        _currentPackageIndex++;
+        return result;
+    }
 
-        } else {
-             if (currPackages[_currentPackageIndex].flag == "decisionOne") {
-                if (decisionOne) {
-                    result = currPackages[_currentPackageIndex].a;
-                    _currentPackageIndex++;
-                    return result;
-                } else {
-                    result= currPackages[_currentPackageIndex].b;
-                    _currentPackageIndex++;
-                    return result;
-                 }
-             }
-                if (currPackages[_currentPackageIndex].flag == "decisionTwo") {
-                    if (decisionTwo) {
-                        result =  currPackages[_currentPackageIndex].a;
-                        _currentPackageIndex++;
-                        return result;
-                    } else {
-                        result = currPackages[_currentPackageIndex].b;
-                        _currentPackageIndex++;
-                        return result;
-                    }
-                }
-
+    private GameObject CalculateNextPackage() {
+        if (currPackages[_currentPackageIndex].flag == "decisionOne") {
+            return decisionOne ? currPackages[_currentPackageIndex].a : currPackages[_currentPackageIndex].b;
         }
-        return null;
-        // GameObject result = dayOnePackages[_currentPackageIndex];
-        // _currentPackageIndex++;
-        // return result;
+        
+        if (currPackages[_currentPackageIndex].flag == "decisionTwo") {
+            return decisionTwo ? currPackages[_currentPackageIndex].a : currPackages[_currentPackageIndex].b;
+        }
+        
+        return currPackages[_currentPackageIndex].a;
     }
 }

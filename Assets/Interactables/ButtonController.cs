@@ -7,6 +7,8 @@ using UnityEngine.UIElements;
 public class ButtonController : Interactable {
     [SerializeField] private Sprite button;
     [SerializeField] private Sprite pressedButton;
+    [SerializeField] private AudioClip onButtonDownSfx;
+    [SerializeField] private AudioClip onButtonUpSfx;
 
     private bool _hovered;
     private bool _pressed;
@@ -23,6 +25,7 @@ public class ButtonController : Interactable {
 
     private void Update() {
         if (_hovered && Input.GetMouseButtonDown(0)) {
+            GlobalAudio.Source.PlayOneShot(onButtonDownSfx);
             _pressed = true;
         }
 
@@ -37,11 +40,12 @@ public class ButtonController : Interactable {
     }
 
     private void OnButtonPressed() {
+        GlobalAudio.Source.PlayOneShot(onButtonUpSfx);
+        
         if (FindObjectOfType<PackageController>() == null) {
             GameObject nextPackage = PackageData.Instance.GetNextPackage();
             if (nextPackage == null) return;
-            
-            Instantiate(nextPackage, new Vector2(0f, 18f), Quaternion.identity);
+            Instantiate(nextPackage, new Vector2(0f, -18f), Quaternion.identity);
         }
     }
 }
