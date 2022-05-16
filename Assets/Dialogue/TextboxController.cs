@@ -13,7 +13,8 @@ public class TextboxController : MonoBehaviour {
     [SerializeField] private float fastTypeDelay;
     [SerializeField] private AudioClip onChatSfx1;
     [SerializeField] private AudioClip onChatSfx2;
-
+    [SerializeField] private GameObject endOfDayButton;
+    private DialogueItem _dialgoueItem;
     
     private String _text;
     private String _currentText;
@@ -28,6 +29,11 @@ public class TextboxController : MonoBehaviour {
     private bool _finished;
     
     public void Init(DialogueItem dialogue) {
+        _dialgoueItem = dialogue;
+
+        if (!dialogue.EndOfDay) {
+            endOfDayButton.SetActive(false);
+        }
         image.sprite = dialogue.Image;
         nameField.text = dialogue.Name;
         
@@ -53,8 +59,13 @@ public class TextboxController : MonoBehaviour {
     }
 
     private void Update() {
-        if (_finished && Input.GetMouseButtonDown(0)) {
+        if (_finished && Input.GetMouseButtonDown(0) && !_dialgoueItem.EndOfDay) {
             Destroy(gameObject);
         }
+    }
+
+    public void OnEndDayButtonClicked() {
+        DayEndController.Instance.EndDay();
+        Destroy(gameObject);
     }
 }
