@@ -41,8 +41,6 @@ public class PackageController : Draggable {
     
     private void OnDrop(RegionController region) {
         if (region != null) {
-            Debug.Log($"Dropped package in {region.name}!");
-
             if (region.RegionId == "deliver") {
                 GlobalAudio.Source.PlayOneShot(onPackageDeliveredSfx);
                 TextboxManager.Instance.CreateText(onPackageDeliveredText);

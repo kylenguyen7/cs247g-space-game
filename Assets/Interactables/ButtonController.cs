@@ -4,19 +4,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class ButtonController : Interactable {
+public abstract class ButtonController : Interactable {
     [SerializeField] private Sprite button;
     [SerializeField] private Sprite pressedButton;
     [SerializeField] private AudioClip onButtonDownSfx;
     [SerializeField] private AudioClip onButtonUpSfx;
-    [SerializeField] private AudioClip onPackageEnterSfx;
 
+    protected bool _active = true;
     private bool _hovered;
     private bool _pressed;
 
-    private void OnMouseEnter() {
-        ToggleOutline(true);
-        _hovered = true;
+    private void OnMouseOver() {
+        if (_active && !_hovered) {
+            ToggleOutline(true);
+            _hovered = true;
+        }
     }
 
     private void OnMouseExit() {
@@ -33,6 +35,7 @@ public class ButtonController : Interactable {
         if (Input.GetMouseButtonUp(0)) { 
             if (_hovered && _pressed) {
                 OnButtonPressed();
+                GlobalAudio.Source.PlayOneShot(onButtonUpSfx);
             }
             _pressed = false;
         }
@@ -40,13 +43,5 @@ public class ButtonController : Interactable {
         sprite.sprite = _hovered && _pressed ? pressedButton : button;
     }
 
-    private void OnButtonPressed() {
-        GlobalAudio.Source.PlayOneShot(onButtonUpSfx);
-        GlobalAudio.Source.PlayOneShot(onPackageEnterSfx);
-        if (FindObjectOfType<PackageController>() == null) {
-            GameObject nextPackage = PackageData.Instance.GetNextPackage();
-            if (nextPackage == null) return;
-            Instantiate(nextPackage, new Vector2(0f, -18f), Quaternion.identity);
-        }
-    }
+    protected abstract void OnButtonPressed();
 }

@@ -16,6 +16,6 @@ public class ReceiptItemController : MonoBehaviour {
         }
         
         text.text = itemText;
-        amount.text = itemAmount < 0 ? $"-${itemAmount}" : $"${itemAmount}";
+        amount.text = itemAmount < 0 ? $"-${-itemAmount}" : $"${itemAmount}";
     }
 }
