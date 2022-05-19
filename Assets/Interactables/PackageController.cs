@@ -8,8 +8,12 @@ public class PackageController : Draggable {
     [SerializeField, Range(0f, 1f)] private float enterSpeed;
     [SerializeField] private AudioClip onPackageDestroyedSfx;
     [SerializeField] private AudioClip onPackageDeliveredSfx;
-    private bool _pickedUp;
-    [SerializeField] String flag; 
+    [SerializeField] private String flag;
+    [SerializeField] private bool shouldBeDelivered;
+    
+    // Entering
+    [SerializeField] private Collider2D collider;
+    private bool _entering = true;
 
     private RegionController _currentRegion;
     private RegionController CurrentRegion {
@@ -43,17 +47,33 @@ public class PackageController : Draggable {
         if (region != null) {
             if (region.RegionId == "deliver") {
                 GlobalAudio.Source.PlayOneShot(onPackageDeliveredSfx);
-                TextboxManager.Instance.CreateText(onPackageDeliveredText);
+                
                 if (flag == "decisionOne") {
                     PackageData.Instance.decisionOne = true;
                 }
+
+                if (!shouldBeDelivered) {
+                    CitationsManager.Instance.CreateCitation(true);
+                }
+                
+                
+                TextboxManager.Instance.CreateText(onPackageDestroyedText);
+                
                 Destroy(gameObject);
             } else if (region.RegionId == "destroy") {
                 GlobalAudio.Source.PlayOneShot(onPackageDestroyedSfx);
-                TextboxManager.Instance.CreateText(onPackageDestroyedText);
+                
                 if (flag == "decisionOne") {
                     PackageData.Instance.decisionOne = false;
                 }
+                
+                if (shouldBeDelivered) {
+                    CitationsManager.Instance.CreateCitation(false);
+                }
+                
+                
+                TextboxManager.Instance.CreateText(onPackageDestroyedText);
+                
                 Destroy(gameObject);
             }
         }
@@ -63,7 +83,8 @@ public class PackageController : Draggable {
         base.Update();
 
         if (Holding) {
-            _pickedUp = true;
+            _entering = false;
+            collider.enabled = true;
             var mousePos = GetMousePosWorldCoordinates();
             var hit = Physics2D.Raycast(
                 new Vector3(mousePos.x, mousePos.y, Camera.main.transform.position.z),
@@ -78,8 +99,12 @@ public class PackageController : Draggable {
             }
         }
 
-        if (!_pickedUp) {
+        if (_entering) {
             rb.MovePosition(Vector2.Lerp(transform.position, Vector2.zero, enterSpeed));
+            if (Vector2.Distance(transform.position, Vector2.zero) < 0.1f) {
+                _entering = false;
+                collider.enabled = true;
+            }
         }
     }
 }

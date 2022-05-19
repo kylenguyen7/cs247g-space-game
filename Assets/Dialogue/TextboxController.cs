@@ -30,10 +30,6 @@ public class TextboxController : MonoBehaviour {
     
     public void Init(DialogueItem dialogue) {
         _dialgoueItem = dialogue;
-
-        if (!dialogue.EndOfDay) {
-            endOfDayButton.SetActive(false);
-        }
         image.sprite = dialogue.Image;
         nameField.text = dialogue.Name;
         
@@ -56,6 +52,9 @@ public class TextboxController : MonoBehaviour {
         }
 
         _finished = true;
+        if (_dialgoueItem.EndOfDay) {
+            endOfDayButton.SetActive(true);
+        }
     }
 
     private void Update() {
