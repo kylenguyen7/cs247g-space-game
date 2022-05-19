@@ -32,6 +32,8 @@ public class Draggable : Interactable {
         if (_holding) {
             rb.MovePosition(GetMousePosWorldCoordinates() - _holdingOffset);
         }
+        
+        
     }
 
     protected static Vector2 GetMousePosWorldCoordinates() {

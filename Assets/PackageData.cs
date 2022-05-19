@@ -5,8 +5,8 @@ using UnityEngine;
 using UnityEngine.Serialization;
 
 public class PackageData : MonoBehaviour {
-    public bool decisionOne;
-    public bool decisionTwo;
+    [HideInInspector] public bool decisionOne;
+    [HideInInspector] public bool decisionTwo;
     public static PackageData Instance;
     
     [Serializable] 
@@ -24,7 +24,6 @@ public class PackageData : MonoBehaviour {
         }
 
         Instance = this;
-        currPackages = dayOnePackages;
     }
 
     [SerializeField] private List<PackagePair> dayOnePackages; 
@@ -35,14 +34,7 @@ public class PackageData : MonoBehaviour {
 
     public GameObject GetNextPackage() {
         if (_currentPackageIndex == currPackages.Count) {
-            _currentPackageIndex = 0;
-            if (currPackages == dayOnePackages) {
-                currPackages = dayTwoPackages;
-            } else if (currPackages == dayTwoPackages) {
-                currPackages = decisionOne ? dayThreeAPackages : dayThreeBPackages;
-            } else {
-                return null;
-            }
+            return null;
         }
         
         GameObject result = CalculateNextPackage();
@@ -60,5 +52,17 @@ public class PackageData : MonoBehaviour {
         }
         
         return currPackages[_currentPackageIndex].a;
+    }
+
+    public void AdvanceDay() {
+        if (currPackages == null) {
+            currPackages = dayOnePackages;
+        } else if (currPackages == dayOnePackages) {
+            currPackages = dayTwoPackages;
+        } else if (currPackages == dayTwoPackages) {
+            currPackages = decisionOne ? dayThreeAPackages : dayThreeBPackages;
+        }
+        
+        _currentPackageIndex = 0;
     }
 }

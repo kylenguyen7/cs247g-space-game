@@ -7,7 +7,15 @@ public abstract class Interactable : MonoBehaviour {
     [SerializeField] protected SpriteRenderer sprite;
     [SerializeField] private float outlineWidth;
 
+    private bool _outlined;
+
     protected void ToggleOutline(bool outline) {
-        sprite.material.SetFloat("_Thickness", outline ? outlineWidth : 0f);
+        _outlined = outline;
+        sprite.material.SetFloat("_Thickness", _outlined ? outlineWidth : 0f);
+    }
+
+    protected void ToggleOutline() {
+        _outlined = !_outlined;
+        sprite.material.SetFloat("_Thickness", _outlined ? outlineWidth : 0f);
     }
 }
