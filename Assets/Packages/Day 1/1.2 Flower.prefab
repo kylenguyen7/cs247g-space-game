@@ -52,12 +52,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6160374264157875991, guid: 186461c7605c7f844970e99a3060e67c, type: 3}
+      propertyPath: destPlanet
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6160374264157875991, guid: 186461c7605c7f844970e99a3060e67c, type: 3}
+      propertyPath: originPlanet
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6160374264157875991, guid: 186461c7605c7f844970e99a3060e67c, type: 3}
+      propertyPath: shouldBeDelivered
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6160374264157875991, guid: 186461c7605c7f844970e99a3060e67c, type: 3}
       propertyPath: onPackageDeliveredText
       value: 
       objectReference: {fileID: 11400000, guid: e0a670c95c81b4467b58222445460baa, type: 2}
     - target: {fileID: 6160374264157875996, guid: 186461c7605c7f844970e99a3060e67c, type: 3}
       propertyPath: m_Name
-      value: Flower
+      value: 1.2 Flower
       objectReference: {fileID: 0}
     - target: {fileID: 6160374264580480576, guid: 186461c7605c7f844970e99a3060e67c, type: 3}
       propertyPath: m_Sprite

@@ -7,5 +7,11 @@ public class DialogueItem : ScriptableObject {
     public Sprite Image;
     public String Name;
     public String Text;
-    public bool EndOfDay;
+    public DialogueType Type;
+
+    public enum DialogueType {
+        NORMAL,
+        END_DAY,
+        RESTART_DAY
+    }
 }

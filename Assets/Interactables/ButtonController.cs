@@ -26,7 +26,7 @@ public abstract class ButtonController : Interactable {
         _hovered = false;
     }
 
-    private void Update() {
+    protected void Update() {
         if (_hovered && Input.GetMouseButtonDown(0)) {
             GlobalAudio.Source.PlayOneShot(onButtonDownSfx);
             _pressed = true;

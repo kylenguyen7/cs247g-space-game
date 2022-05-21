@@ -11,11 +11,16 @@ public class DayEndController : MonoBehaviour {
     [SerializeField] private Animator animator;
     [SerializeField] private GameObject receiptItemParent;
     [SerializeField] private GameObject receiptItemPrefab;
-    [SerializeField] private GameObject introScreenParent;
+    [SerializeField] private GameObject parentCanvas;
     [SerializeField] private GameObject introScreenPrefab;
+    [SerializeField] private GameObject restartScreenPrefab;
 
     [SerializeField] private GameObject bail;
     [SerializeField] private GameObject startNextDay;
+
+    private GameObject _totalReceiptItem;
+    private int _newPlayerSavings;
+    public int NewPlayerSavings => _newPlayerSavings;
     
     private void Awake() {
         if (Instance != null) {
@@ -35,26 +40,25 @@ public class DayEndController : MonoBehaviour {
         animator.SetTrigger("enter");
         yield return new WaitForSecondsRealtime(2f);
 
-        int totalAmount = 0;
-        totalAmount += AddReceiptItem("Savings", PlayerData.Instance.PlayerMoney);
+        _newPlayerSavings = 0;
+        _newPlayerSavings += AddReceiptItem("Savings", PlayerData.Instance.PlayerMoney, false);
         yield return new WaitForSecondsRealtime(0.75f);
         
-        totalAmount += AddReceiptItem($"Deliveries ({PlayerData.Instance.PackagesDeliveredToday})",
-            PlayerData.Instance.PackagesDeliveredToday * PlayerData.MONEY_PER_PACKAGE);
+        _newPlayerSavings += AddReceiptItem($"Salary", 60, false);
         yield return new WaitForSecondsRealtime(0.75f);
 
-        if (PlayerData.Instance.CitationsToday == 1) {
-            totalAmount += AddReceiptItem("Citation (1)", -5);
+        if (CitationsManager.Instance.NumCitations == 1) {
+            _newPlayerSavings += AddReceiptItem("Citation (1)", -20, false);
             yield return new WaitForSecondsRealtime(0.75f);
-        } else if (PlayerData.Instance.CitationsToday == 2) {
-            totalAmount += AddReceiptItem("Citations (2)", -10);
+        } else if (CitationsManager.Instance.NumCitations == 2) {
+            _newPlayerSavings += AddReceiptItem("Citations (2)", -40, false);
             yield return new WaitForSecondsRealtime(0.75f);
         }
         
-        totalAmount += AddReceiptItem("Fuel", -20);
+        _newPlayerSavings += AddReceiptItem("Fuel", -20, false);
         yield return new WaitForSecondsRealtime(0.75f);
 
-        AddReceiptItem("Total", totalAmount);
+        AddReceiptItem("Total", _newPlayerSavings, true);
         yield return new WaitForSecondsRealtime(0.75f);
         
         bail.SetActive(true);
@@ -63,10 +67,25 @@ public class DayEndController : MonoBehaviour {
         startNextDay.SetActive(true);
     }
 
-    private int AddReceiptItem(String title, int amount) {
+    public bool TryAddReceiptItem(String name, int cost) {
+        if (_newPlayerSavings + cost < 0) {
+            return false;
+        }
+        
+        Destroy(_totalReceiptItem);
+        _newPlayerSavings += AddReceiptItem(name, cost, false);
+        AddReceiptItem("Total", _newPlayerSavings, true);
+        return true;
+    }
+
+    private int AddReceiptItem(String title, int amount, bool total) {
         var receiptItem = Instantiate(receiptItemPrefab, receiptItemParent.transform)
             .GetComponent<ReceiptItemController>();
-        receiptItem.Init(title, amount);
+        receiptItem.Init(title, amount, total);
+
+        if (total) {
+            _totalReceiptItem = receiptItem.gameObject;
+        }
 
         return amount;
     }
@@ -75,7 +94,30 @@ public class DayEndController : MonoBehaviour {
         animator.SetTrigger("reset");
     }
 
+    public void SetDataForNextDay() {
+        PlayerData.Instance.AdvanceDay();
+        PackageData.Instance.AdvanceDay();
+        
+        foreach (CitationController citation in FindObjectsOfType<CitationController>()) {
+            Destroy(citation.gameObject);
+        }
+        
+        foreach (PackageController package in FindObjectsOfType<PackageController>()) {
+            Destroy(package.gameObject);
+        }
+        
+        for (int i = 0; i < receiptItemParent.transform.childCount; i++) {
+            Destroy(receiptItemParent.transform.GetChild(i).gameObject);
+        }
+
+        PlayerData.Instance.PlayerMoney = _newPlayerSavings;
+    }
+
     public void CreateIntroScreen() {
-        Instantiate(introScreenPrefab, introScreenParent.transform);
+        Instantiate(introScreenPrefab, parentCanvas.transform);
+    }
+
+    public void CreateRestartScreen() {
+        Instantiate(restartScreenPrefab, parentCanvas.transform);
     }
 }

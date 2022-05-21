@@ -24,6 +24,7 @@ public class PackageData : MonoBehaviour {
         }
 
         Instance = this;
+        currPackages = dayOnePackages;
     }
 
     [SerializeField] private List<PackagePair> dayOnePackages; 
@@ -42,6 +43,15 @@ public class PackageData : MonoBehaviour {
         return result;
     }
 
+    public Planet GetNextPackageOrigin() {
+        if (_currentPackageIndex == currPackages.Count) {
+            return Planet.NONE;
+        }
+        
+        GameObject nextPackage = CalculateNextPackage();
+        return nextPackage.GetComponent<PackageController>().OriginPlanet;
+    }
+
     private GameObject CalculateNextPackage() {
         if (currPackages[_currentPackageIndex].flag == "decisionOne") {
             return decisionOne ? currPackages[_currentPackageIndex].a : currPackages[_currentPackageIndex].b;
@@ -55,14 +65,16 @@ public class PackageData : MonoBehaviour {
     }
 
     public void AdvanceDay() {
-        if (currPackages == null) {
-            currPackages = dayOnePackages;
-        } else if (currPackages == dayOnePackages) {
+        if (currPackages == dayOnePackages) {
             currPackages = dayTwoPackages;
         } else if (currPackages == dayTwoPackages) {
             currPackages = decisionOne ? dayThreeAPackages : dayThreeBPackages;
         }
         
+        _currentPackageIndex = 0;
+    }
+
+    public void RestartDay() {
         _currentPackageIndex = 0;
     }
 }

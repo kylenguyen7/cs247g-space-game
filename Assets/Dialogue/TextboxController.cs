@@ -13,6 +13,7 @@ public class TextboxController : MonoBehaviour {
     [SerializeField] private float fastTypeDelay;
     [SerializeField] private AudioClip onChatSfx;
     [SerializeField] private GameObject endOfDayButton;
+    [SerializeField] private GameObject restartDayButton;
     private DialogueItem _dialgoueItem;
     
     private String _text;
@@ -53,19 +54,30 @@ public class TextboxController : MonoBehaviour {
         }
 
         _finished = true;
-        if (_dialgoueItem.EndOfDay) {
+        if (_dialgoueItem.Type == DialogueItem.DialogueType.END_DAY) {
             endOfDayButton.SetActive(true);
+        }
+
+        if (_dialgoueItem.Type == DialogueItem.DialogueType.RESTART_DAY) {
+            restartDayButton.SetActive(true);
         }
     }
 
     private void Update() {
-        if (_finished && Input.GetMouseButtonDown(0) && !_dialgoueItem.EndOfDay) {
+        if (_dialgoueItem.Type == DialogueItem.DialogueType.NORMAL && _finished && Input.GetMouseButtonDown(0)) {
             Destroy(gameObject);
         }
     }
 
     public void OnEndDayButtonClicked() {
+        TextboxManager.Instance.ClearDialogueQueue();
         DayEndController.Instance.EndDay();
+        Destroy(gameObject);
+    }
+
+    public void OnRestartDayButtonClicked() {
+        TextboxManager.Instance.ClearDialogueQueue();
+        DayEndController.Instance.CreateRestartScreen();
         Destroy(gameObject);
     }
 }

@@ -16,4 +16,4 @@ MonoBehaviour:
   Name: ...
   Text: '*Someone with their face covered approaches you cautiously. It almost seems
     like they recognize you. Oh? They''ve placed something in your hand*'
-  EndOfDay: 1
+  Type: 1

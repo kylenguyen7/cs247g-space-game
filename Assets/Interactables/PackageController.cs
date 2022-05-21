@@ -10,6 +10,12 @@ public class PackageController : Draggable {
     [SerializeField] private AudioClip onPackageDeliveredSfx;
     [SerializeField] private String flag;
     [SerializeField] private bool shouldBeDelivered;
+    [SerializeField] private Planet originPlanet;
+    [SerializeField] private Planet destPlanet;
+    [SerializeField] private AudioClip errorSfx;
+
+    public Planet OriginPlanet => originPlanet;
+    public Planet DestPlanet => destPlanet;
     
     // Entering
     [SerializeField] private Collider2D collider;
@@ -46,34 +52,41 @@ public class PackageController : Draggable {
     private void OnDrop(RegionController region) {
         if (region != null) {
             if (region.RegionId == "deliver") {
+                if (destPlanet != ShipController.Instance.CurrentPlanet) {
+                    GlobalAudio.Source.PlayOneShot(errorSfx);
+                    return;
+                }
                 GlobalAudio.Source.PlayOneShot(onPackageDeliveredSfx);
-                
                 if (flag == "decisionOne") {
                     PackageData.Instance.decisionOne = true;
+                } else if (flag == "decisionTwo") {
+                    PackageData.Instance.decisionTwo = true;
                 }
 
+                TextboxManager.Instance.QueueText(onPackageDeliveredText);
                 if (!shouldBeDelivered) {
-                    CitationsManager.Instance.CreateCitation(true);
+                    TextboxManager.Instance.QueueCitation();
+                    CitationsManager.Instance.CreateCitation("Citation!");
+                } else {
+                    PlayerData.Instance.PackagesDeliveredToday++;
                 }
-                
-                
-                TextboxManager.Instance.CreateText(onPackageDestroyedText);
                 
                 Destroy(gameObject);
             } else if (region.RegionId == "destroy") {
                 GlobalAudio.Source.PlayOneShot(onPackageDestroyedSfx);
-                
                 if (flag == "decisionOne") {
                     PackageData.Instance.decisionOne = false;
+                } else if (flag == "decisionTwo") {
+                    PackageData.Instance.decisionTwo = true;
                 }
                 
+                TextboxManager.Instance.QueueText(onPackageDestroyedText);
                 if (shouldBeDelivered) {
-                    CitationsManager.Instance.CreateCitation(false);
+                    TextboxManager.Instance.QueueCitation();
+                    CitationsManager.Instance.CreateCitation("Citation!");
+                } else {
+                    PlayerData.Instance.PackagesDeliveredToday++;
                 }
-                
-                
-                TextboxManager.Instance.CreateText(onPackageDestroyedText);
-                
                 Destroy(gameObject);
             }
         }
