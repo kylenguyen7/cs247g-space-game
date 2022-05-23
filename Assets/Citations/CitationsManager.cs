@@ -17,12 +17,17 @@ public class CitationsManager : MonoBehaviour {
     }
 
     private int _numCitations;
-    public int NumCitations => _numCitations;
 
-    public void CreateCitation(bool packageWasDelivered) {
+    public int NumCitations {
+        get => _numCitations;
+        set => _numCitations = value;
+    }
+
+    public void CreateCitation(String message) {
+
         _numCitations++;
         var citation = Instantiate(citationPrefab, Vector2.zero, Quaternion.identity)
             .GetComponent<CitationController>();
-        citation.Init(packageWasDelivered);
+        citation.Init(message);
     }
 }

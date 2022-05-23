@@ -68,6 +68,18 @@ PrefabInstance:
       value: -0.24033618
       objectReference: {fileID: 0}
     - target: {fileID: 6160374264157875991, guid: 186461c7605c7f844970e99a3060e67c, type: 3}
+      propertyPath: destPlanet
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6160374264157875991, guid: 186461c7605c7f844970e99a3060e67c, type: 3}
+      propertyPath: originPlanet
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6160374264157875991, guid: 186461c7605c7f844970e99a3060e67c, type: 3}
+      propertyPath: shouldBeDelivered
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6160374264157875991, guid: 186461c7605c7f844970e99a3060e67c, type: 3}
       propertyPath: onPackageDeliveredText
       value: 
       objectReference: {fileID: 11400000, guid: ede3fb4044b20497fb9cf98ef83beaee, type: 2}
@@ -77,7 +89,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 7d0e640d0d5595749b5914498c840788, type: 2}
     - target: {fileID: 6160374264157875996, guid: 186461c7605c7f844970e99a3060e67c, type: 3}
       propertyPath: m_Name
-      value: Cookies
+      value: 1.4 Cookies
       objectReference: {fileID: 0}
     - target: {fileID: 6160374264580480576, guid: 186461c7605c7f844970e99a3060e67c, type: 3}
       propertyPath: m_Sprite
@@ -89,15 +101,15 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 398a00014b372a04881c1aac81a7833a, type: 2}
     - target: {fileID: 6160374264580480579, guid: 186461c7605c7f844970e99a3060e67c, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.4
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 6160374264580480579, guid: 186461c7605c7f844970e99a3060e67c, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.4
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 6160374264580480579, guid: 186461c7605c7f844970e99a3060e67c, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.4
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 6160374264580480579, guid: 186461c7605c7f844970e99a3060e67c, type: 3}
       propertyPath: m_ConstrainProportionsScale

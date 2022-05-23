@@ -8,8 +8,6 @@ public class IntroScreenController : MonoBehaviour {
     [SerializeField] private TextMeshProUGUI text;
 
     private void Start() {
-        PlayerData.Instance.AdvanceDay();
-        PackageData.Instance.AdvanceDay();
         text.text = $"DAY {PlayerData.Instance.CurrentDay}";
     }
 

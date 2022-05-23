@@ -55,9 +55,13 @@ PrefabInstance:
       propertyPath: onPackageDeliveredText
       value: 
       objectReference: {fileID: 11400000, guid: 2e70aa601cdea4d6eb7d8462169a016c, type: 2}
+    - target: {fileID: 6160374264157875991, guid: 186461c7605c7f844970e99a3060e67c, type: 3}
+      propertyPath: onPackageDestroyedText
+      value: 
+      objectReference: {fileID: 11400000, guid: 6b1436f759b495d4693fc476f888cd79, type: 2}
     - target: {fileID: 6160374264157875996, guid: 186461c7605c7f844970e99a3060e67c, type: 3}
       propertyPath: m_Name
-      value: Letter 2
+      value: 2.6B Letter 2
       objectReference: {fileID: 0}
     - target: {fileID: 6160374264580480576, guid: 186461c7605c7f844970e99a3060e67c, type: 3}
       propertyPath: m_Sprite
