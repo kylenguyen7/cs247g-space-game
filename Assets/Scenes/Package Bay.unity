@@ -3817,7 +3817,7 @@ MonoBehaviour:
   pressedButton: {fileID: 2037514910, guid: 6b481b45425629948a91f12a132a2d07, type: 3}
   onButtonDownSfx: {fileID: 8300000, guid: 0c0d6448daf51e645b6ba94006e06e83, type: 3}
   onButtonUpSfx: {fileID: 8300000, guid: bde001c6874e3d847a85338caf3993df, type: 3}
-  onPackageEnterSfx: {fileID: 0}
+  onPackageEnterSfx: {fileID: 8300000, guid: 0808cac0570d04caa97547f82d9f83e1, type: 3}
 --- !u!61 &1952193214
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4047,9 +4047,6 @@ MonoBehaviour:
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
   m_CancelButton: Cancel
-  onButtonDownSfx: {fileID: 8300000, guid: 0c0d6448daf51e645b6ba94006e06e83, type: 3}
-  onButtonUpSfx: {fileID: 8300000, guid: bde001c6874e3d847a85338caf3993df, type: 3}
-  onPackageEnterSfx: {fileID: 8300000, guid: 0808cac0570d04caa97547f82d9f83e1, type: 3}
   m_InputActionsPerSecond: 10
   m_RepeatDelay: 0.5
   m_ForceModuleActive: 0
