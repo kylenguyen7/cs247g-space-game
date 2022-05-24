@@ -5367,7 +5367,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1912246310}
   acceleration: 2000
-  angularVelocity: -8000
+  angularVelocity: -12000
 --- !u!50 &1912246310
 Rigidbody2D:
   serializedVersion: 4

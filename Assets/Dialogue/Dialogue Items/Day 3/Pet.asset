@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16bca640946e40e9b22e20fbcd14062e, type: 3}
-  m_Name: Tablet Holder
+  m_Name: Pet
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: d2a8235341bfb456fb35b04936136378, type: 3}
+  Image: {fileID: 21300000, guid: 4254f44eabd40443498ea379b278b98a, type: 3}
   Name: Character
-  Text: Hey, be careful with that! I spent a lot of dough on this one!
+  Text: "Kekeke\u2026 keke"
   Type: 0
