@@ -54,14 +54,22 @@ PrefabInstance:
     - target: {fileID: 6160374264157875991, guid: 186461c7605c7f844970e99a3060e67c, type: 3}
       propertyPath: onPackageDeliveredText
       value: 
-      objectReference: {fileID: 11400000, guid: aeec7e31ae11f456db34d0c093f5cb0e, type: 2}
+      objectReference: {fileID: 11400000, guid: 58ce0aab1b1754ff988cd3f876d0c3ad, type: 2}
     - target: {fileID: 6160374264157875996, guid: 186461c7605c7f844970e99a3060e67c, type: 3}
       propertyPath: m_Name
-      value: Letter 1
+      value: Letter 2
       objectReference: {fileID: 0}
     - target: {fileID: 6160374264580480576, guid: 186461c7605c7f844970e99a3060e67c, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 3b2c4961322ae48128dd7a7a1a303cc5, type: 3}
+      objectReference: {fileID: 21300000, guid: 70abbfe48431e4ba79c5c01af8603430, type: 3}
+    - target: {fileID: 6160374264580480579, guid: 186461c7605c7f844970e99a3060e67c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6160374264580480579, guid: 186461c7605c7f844970e99a3060e67c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 186461c7605c7f844970e99a3060e67c, type: 3}

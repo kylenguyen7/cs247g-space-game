@@ -57,11 +57,19 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 4cb5a1b23cf754a44ac394c11f39daa3, type: 2}
     - target: {fileID: 6160374264157875996, guid: 186461c7605c7f844970e99a3060e67c, type: 3}
       propertyPath: m_Name
-      value: Letter 1
+      value: 2.5A Letter 1
       objectReference: {fileID: 0}
     - target: {fileID: 6160374264580480576, guid: 186461c7605c7f844970e99a3060e67c, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 3b2c4961322ae48128dd7a7a1a303cc5, type: 3}
+      objectReference: {fileID: 21300000, guid: fc9b3d312181047fd9022ebde4bb796d, type: 3}
+    - target: {fileID: 6160374264580480579, guid: 186461c7605c7f844970e99a3060e67c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6160374264580480579, guid: 186461c7605c7f844970e99a3060e67c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 186461c7605c7f844970e99a3060e67c, type: 3}

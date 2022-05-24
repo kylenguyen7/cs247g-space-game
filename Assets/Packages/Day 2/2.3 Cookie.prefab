@@ -57,7 +57,19 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 3257a301192e3447f811ddab3375d304, type: 2}
     - target: {fileID: 6160374264157875996, guid: 186461c7605c7f844970e99a3060e67c, type: 3}
       propertyPath: m_Name
-      value: 1 Cookie
+      value: 2.3 Cookie
+      objectReference: {fileID: 0}
+    - target: {fileID: 6160374264580480576, guid: 186461c7605c7f844970e99a3060e67c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 66c8a7255b9414224ab0e6fd2b0042ee, type: 3}
+    - target: {fileID: 6160374264580480579, guid: 186461c7605c7f844970e99a3060e67c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6160374264580480579, guid: 186461c7605c7f844970e99a3060e67c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 186461c7605c7f844970e99a3060e67c, type: 3}
