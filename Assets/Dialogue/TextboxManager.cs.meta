@@ -3,7 +3,12 @@ guid: 2f04f9e17c3df4c4bb092d250e4eab1f
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - textboxPrefab: {instanceID: 0}
+  - onCitationSfx: {fileID: 8300000, guid: 72a5a485a89e64c8db1fc7db1032a214, type: 3}
+  - firstCitation: {instanceID: 0}
+  - secondCitation: {instanceID: 0}
+  - finalCitation: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

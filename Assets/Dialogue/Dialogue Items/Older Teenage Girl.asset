@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16bca640946e40e9b22e20fbcd14062e, type: 3}
   m_Name: Older Teenage Girl
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: 9f6d6e984e613a746a1bf6b668bdd83d, type: 3}
+  Image: {fileID: 21300000, guid: 34511aa7aff954868bbde565bab4d572, type: 3}
   Name: ...
-  Text: '*An older teenage girl takes the letter and looks at it with joy and with
-    dread. She nods to you then walks away.*'
+  Text: '*takes the letter and looks at it with joy and with dread. She nods to you
+    then walks away.*'
+  Type: 0

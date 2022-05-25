@@ -24,6 +24,7 @@ public class CitationsManager : MonoBehaviour {
     }
 
     public void CreateCitation(String message) {
+
         _numCitations++;
         var citation = Instantiate(citationPrefab, Vector2.zero, Quaternion.identity)
             .GetComponent<CitationController>();

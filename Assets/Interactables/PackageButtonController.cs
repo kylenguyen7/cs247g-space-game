@@ -9,6 +9,7 @@ public class PackageButtonController : ButtonController {
     [SerializeField] private BoxCollider2D collider;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private AudioClip onPackageEnterSfx;
+
     public static PackageButtonController Instance;
     private Vector2 _startingPosition;
     private Vector2 _targetPosition;

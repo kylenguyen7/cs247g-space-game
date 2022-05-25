@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16bca640946e40e9b22e20fbcd14062e, type: 3}
   m_Name: Mask Holder
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: 9f6d6e984e613a746a1bf6b668bdd83d, type: 3}
+  Image: {fileID: 21300000, guid: 4254f44eabd40443498ea379b278b98a, type: 3}
   Name: Character
   Text: You can take this one. People are still looking out for you.
+  Type: 0

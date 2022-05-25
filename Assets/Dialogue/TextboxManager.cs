@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class TextboxManager : MonoBehaviour {
     [SerializeField] private GameObject textboxPrefab;
+    [SerializeField] private AudioClip onCitationSfx;
+
     [SerializeField] private DialogueItem firstCitation;
     [SerializeField] private DialogueItem secondCitation;
     [SerializeField] private DialogueItem finalCitation;
@@ -47,6 +49,9 @@ public class TextboxManager : MonoBehaviour {
 
     public void ClearDialogueQueue() {
         _dialogueItems.Clear();
+        GlobalAudio.Source.PlayOneShot(onCitationSfx);
+
+
     }
 
     private void Update() {
