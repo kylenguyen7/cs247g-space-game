@@ -66,7 +66,7 @@ PrefabInstance:
     - target: {fileID: 6160374264157875991, guid: 186461c7605c7f844970e99a3060e67c, type: 3}
       propertyPath: onPackageDeliveredText
       value: 
-      objectReference: {fileID: 11400000, guid: 58ce0aab1b1754ff988cd3f876d0c3ad, type: 2}
+      objectReference: {fileID: 11400000, guid: e507c702b6411428fa798e808d8bf4c5, type: 2}
     - target: {fileID: 6160374264157875996, guid: 186461c7605c7f844970e99a3060e67c, type: 3}
       propertyPath: m_Name
       value: 3B 2

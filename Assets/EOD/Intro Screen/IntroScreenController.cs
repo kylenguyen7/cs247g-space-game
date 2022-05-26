@@ -8,7 +8,7 @@ public class IntroScreenController : MonoBehaviour {
     [SerializeField] private TextMeshProUGUI text;
 
     private void Start() {
-        text.text = $"DAY {PlayerData.Instance.CurrentDay}";
+        text.text = $"DAY {PlayerData.Instance.CurrentDay} of 3";
     }
 
     public void DestroyMe() {

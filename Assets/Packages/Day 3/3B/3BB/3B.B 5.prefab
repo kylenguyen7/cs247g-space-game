@@ -63,9 +63,13 @@ PrefabInstance:
       propertyPath: shouldBeDelivered
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6160374264157875991, guid: 186461c7605c7f844970e99a3060e67c, type: 3}
+      propertyPath: onPackageDeliveredText
+      value: 
+      objectReference: {fileID: 11400000, guid: 14f8d5ef59fe04f50be7e5b4ec24f7d7, type: 2}
     - target: {fileID: 6160374264157875996, guid: 186461c7605c7f844970e99a3060e67c, type: 3}
       propertyPath: m_Name
-      value: 3BB.1 Manatee 2
+      value: 3B.B 5
       objectReference: {fileID: 0}
     - target: {fileID: 6160374264580480576, guid: 186461c7605c7f844970e99a3060e67c, type: 3}
       propertyPath: m_Sprite

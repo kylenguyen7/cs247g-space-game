@@ -18,6 +18,7 @@ public class ShipController : MonoBehaviour {
     [SerializeField] private float acceleration;
     [SerializeField] private float angularVelocity;
     [SerializeField] private AudioSource shipAudio;
+    public bool HasMoved { get; private set; }
 
     private Transform currentPlanetTransform;
     private Planet currentPlanet;
@@ -32,6 +33,11 @@ public class ShipController : MonoBehaviour {
         } else if(verticalInput == 0f && shipAudio.isPlaying) {
             shipAudio.Pause();
         }
+
+        if (!HasMoved && verticalInput != 0f) {
+            HasMoved = true;
+        }
+        
         rb.AddForce(transform.right * acceleration * verticalInput * Time.deltaTime);
     }
 
