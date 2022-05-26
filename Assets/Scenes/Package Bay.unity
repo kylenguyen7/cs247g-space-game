@@ -1905,6 +1905,10 @@ PrefabInstance:
       propertyPath: m_text
       value: 'Bail: $25'
       objectReference: {fileID: 0}
+    - target: {fileID: 8942234229302353526, guid: 5495b6d2fe629a3468e2fbff0626f32e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5ac207062d45941879e0ee47665fae86, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5495b6d2fe629a3468e2fbff0626f32e, type: 3}
 --- !u!224 &570207749 stripped
@@ -2757,6 +2761,7 @@ MonoBehaviour:
   restartScreenPrefab: {fileID: 3833398554914833381, guid: a3d1c95721dbb91499b0906484ce3550, type: 3}
   bail: {fileID: 133102400}
   startNextDay: {fileID: 1264968537}
+  dayXTitle: {fileID: 1494680447}
 --- !u!1 &1072345288
 GameObject:
   m_ObjectHideFlags: 0
@@ -5292,6 +5297,10 @@ PrefabInstance:
       propertyPath: m_text
       value: Your Spouse
       objectReference: {fileID: 0}
+    - target: {fileID: 8942234229302353526, guid: 5495b6d2fe629a3468e2fbff0626f32e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4254f44eabd40443498ea379b278b98a, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5495b6d2fe629a3468e2fbff0626f32e, type: 3}
 --- !u!224 &1884002869 stripped
@@ -6608,6 +6617,10 @@ PrefabInstance:
       propertyPath: m_text
       value: 'Bail: $25'
       objectReference: {fileID: 0}
+    - target: {fileID: 8942234229302353526, guid: 5495b6d2fe629a3468e2fbff0626f32e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6e2bf6928c81c49be98486450ee5be6f, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5495b6d2fe629a3468e2fbff0626f32e, type: 3}
 --- !u!224 &4217822003622036904 stripped

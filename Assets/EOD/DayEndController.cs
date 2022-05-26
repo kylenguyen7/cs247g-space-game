@@ -2,8 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
+using TMPro;
 
 public class DayEndController : MonoBehaviour {
     public static DayEndController Instance;
@@ -17,7 +16,8 @@ public class DayEndController : MonoBehaviour {
 
     [SerializeField] private GameObject bail;
     [SerializeField] private GameObject startNextDay;
-
+    [SerializeField] private TextMeshProUGUI dayXTitle;
+    
     private GameObject _totalReceiptItem;
     private int _newPlayerSavings;
     public int NewPlayerSavings => _newPlayerSavings;
@@ -35,6 +35,7 @@ public class DayEndController : MonoBehaviour {
     }
 
     private IEnumerator TransitionSequence() {
+        dayXTitle.text = $"Day {PlayerData.Instance.CurrentDay}";
         yield return new WaitForSecondsRealtime(1f);
         
         animator.SetTrigger("enter");
@@ -97,6 +98,9 @@ public class DayEndController : MonoBehaviour {
     public void SetDataForNextDay() {
         PlayerData.Instance.AdvanceDay();
         PackageData.Instance.AdvanceDay();
+        
+        bail.SetActive(false);
+        startNextDay.SetActive(false);
         
         foreach (CitationController citation in FindObjectsOfType<CitationController>()) {
             Destroy(citation.gameObject);

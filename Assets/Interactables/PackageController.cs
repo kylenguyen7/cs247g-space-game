@@ -53,6 +53,7 @@ public class PackageController : Draggable {
         if (region != null) {
             if (region.RegionId == "deliver") {
                 if (destPlanet != ShipController.Instance.CurrentPlanet) {
+                    ObjectiveLabelController.Instance.FlashMessage($"Travel to {destPlanet} to deliver this package!", 3f, Color.red);
                     GlobalAudio.Source.PlayOneShot(errorSfx);
                     return;
                 }

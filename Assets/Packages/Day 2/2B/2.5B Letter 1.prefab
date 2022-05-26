@@ -52,6 +52,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6160374264157875991, guid: 186461c7605c7f844970e99a3060e67c, type: 3}
+      propertyPath: destPlanet
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6160374264157875991, guid: 186461c7605c7f844970e99a3060e67c, type: 3}
+      propertyPath: originPlanet
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6160374264157875991, guid: 186461c7605c7f844970e99a3060e67c, type: 3}
       propertyPath: onPackageDeliveredText
       value: 
       objectReference: {fileID: 0}
