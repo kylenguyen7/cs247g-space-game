@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerData : MonoBehaviour {
     public static PlayerData Instance;
@@ -23,6 +24,23 @@ public class PlayerData : MonoBehaviour {
     public int CurrentDay { get; private set; }
 
     public void AdvanceDay() {
+        if (CurrentDay == 3) {
+            bool one = PackageData.Instance.decisionOne;
+            bool two = PackageData.Instance.decisionTwo;
+
+            if (one && two) {
+                SceneManager.LoadScene("Ending AA");
+            } else if (one && !two) {
+                SceneManager.LoadScene("Ending AB");
+            } else if (!one && two) {
+                SceneManager.LoadScene("Ending BA");
+            } else {
+                SceneManager.LoadScene("Ending BB");
+            }
+            return;
+        }
+        
+        
         CurrentDay++;
         CitationsManager.Instance.NumCitations = 0;
         PackagesDeliveredToday = 0;

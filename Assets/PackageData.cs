@@ -5,8 +5,8 @@ using UnityEngine;
 using UnityEngine.Serialization;
 
 public class PackageData : MonoBehaviour {
-    [HideInInspector] public bool decisionOne;
-    [HideInInspector] public bool decisionTwo;
+    public bool decisionOne; 
+    public bool decisionTwo;
     public static PackageData Instance;
     
     [Serializable] 
@@ -54,10 +54,12 @@ public class PackageData : MonoBehaviour {
 
     private GameObject CalculateNextPackage() {
         if (currPackages[_currentPackageIndex].flag == "decisionOne") {
+            Debug.Log($"Returning special package based on decisionOne flag: {decisionOne}");
             return decisionOne ? currPackages[_currentPackageIndex].a : currPackages[_currentPackageIndex].b;
         }
         
         if (currPackages[_currentPackageIndex].flag == "decisionTwo") {
+            Debug.Log($"Returning special package based on decisionTwo flag: {decisionTwo}");
             return decisionTwo ? currPackages[_currentPackageIndex].a : currPackages[_currentPackageIndex].b;
         }
         

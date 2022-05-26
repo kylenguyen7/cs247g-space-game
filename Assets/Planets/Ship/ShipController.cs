@@ -17,14 +17,22 @@ public class ShipController : MonoBehaviour {
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private float acceleration;
     [SerializeField] private float angularVelocity;
+    [SerializeField] private AudioSource shipAudio;
 
     private Transform currentPlanetTransform;
     private Planet currentPlanet;
     public Planet CurrentPlanet => currentPlanet;
 
     private void Update() {
-        rb.angularVelocity = Input.GetAxisRaw("Horizontal") * angularVelocity * Time.deltaTime;
-        rb.AddForce(transform.right * acceleration * Input.GetAxisRaw("Vertical") * Time.deltaTime);
+        rb.angularVelocity = Input.GetAxisRaw("Horizontal") * angularVelocity;
+
+        float verticalInput = Input.GetAxisRaw("Vertical");
+        if (verticalInput != 0f && !shipAudio.isPlaying) {
+            shipAudio.UnPause();
+        } else if(verticalInput == 0f && shipAudio.isPlaying) {
+            shipAudio.Pause();
+        }
+        rb.AddForce(transform.right * acceleration * verticalInput * Time.deltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
