@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16bca640946e40e9b22e20fbcd14062e, type: 3}
-  m_Name: Young Girl
+  m_Name: 2 3
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: 9bac1409f55fe4b9ba6a2372c30deb84, type: 3}
-  Name: ...
-  Text: '*takes the package with determination*'
+  Image: {fileID: 21300000, guid: 87930b2d3ea1042e4b63d7c5c812b3d3, type: 3}
+  Name: Grandmother
+  Text: Oh, my grandson. He always tries his best!
   Type: 0

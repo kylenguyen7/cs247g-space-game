@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16bca640946e40e9b22e20fbcd14062e, type: 3}
-  m_Name: Grandmother
+  m_Name: 3 1
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: 87930b2d3ea1042e4b63d7c5c812b3d3, type: 3}
-  Name: Grandmother
-  Text: Oh, my grandson. He always tries his best!
+  Image: {fileID: 21300000, guid: 34511aa7aff954868bbde565bab4d572, type: 3}
+  Name: ...
+  Text: '*takes the letter and looks at it with joy and with dread. She nods to you
+    then walks away.*'
   Type: 0

@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16bca640946e40e9b22e20fbcd14062e, type: 3}
-  m_Name: Young Man 1
+  m_Name: 1 5
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: 4254f44eabd40443498ea379b278b98a, type: 3}
-  Name: Young Man
-  Text: This is probably a letter from my pen pal. They're awesome!
-  Type: 0
+  Image: {fileID: 21300000, guid: cd18fb8f2d21a4fd7b521e8425630cba, type: 3}
+  Name: ...
+  Text: '*Someone with their face covered approaches you cautiously. It almost seems
+    like they recognize you. Oh? They''ve placed something in your hand*'
+  Type: 1
