@@ -53,19 +53,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6160374264157875991, guid: 186461c7605c7f844970e99a3060e67c, type: 3}
       propertyPath: destPlanet
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6160374264157875991, guid: 186461c7605c7f844970e99a3060e67c, type: 3}
       propertyPath: originPlanet
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6160374264157875991, guid: 186461c7605c7f844970e99a3060e67c, type: 3}
       propertyPath: shouldBeDelivered
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6160374264157875991, guid: 186461c7605c7f844970e99a3060e67c, type: 3}
+      propertyPath: onPackageDeliveredText
+      value: 
+      objectReference: {fileID: 11400000, guid: 63b146305800c405c838a72f534693c4, type: 2}
     - target: {fileID: 6160374264157875996, guid: 186461c7605c7f844970e99a3060e67c, type: 3}
       propertyPath: m_Name
-      value: 3BB.1 Manatee 1
+      value: 3B.B 4
       objectReference: {fileID: 0}
     - target: {fileID: 6160374264580480576, guid: 186461c7605c7f844970e99a3060e67c, type: 3}
       propertyPath: m_Sprite

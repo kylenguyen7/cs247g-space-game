@@ -53,15 +53,17 @@ public class PackageController : Draggable {
         if (region != null) {
             if (region.RegionId == "deliver") {
                 if (destPlanet != ShipController.Instance.CurrentPlanet) {
-                    ObjectiveLabelController.Instance.FlashMessage($"Travel to {destPlanet} to deliver this package!", 3f, Color.red);
+                    ObjectiveLabelController.Instance.FlashMessage($"Navigate to {destPlanet} to deliver this package!", 3f, Color.red);
                     GlobalAudio.Source.PlayOneShot(errorSfx);
                     return;
                 }
                 GlobalAudio.Source.PlayOneShot(onPackageDeliveredSfx);
                 if (flag == "decisionOne") {
                     PackageData.Instance.decisionOne = true;
+                    Debug.Log($"Setting decisionOne flag to {flag}");
                 } else if (flag == "decisionTwo") {
                     PackageData.Instance.decisionTwo = true;
+                    Debug.Log($"Setting decisionTwo flag to {flag}");
                 }
 
                 TextboxManager.Instance.QueueText(onPackageDeliveredText);
@@ -77,8 +79,10 @@ public class PackageController : Draggable {
                 GlobalAudio.Source.PlayOneShot(onPackageDestroyedSfx);
                 if (flag == "decisionOne") {
                     PackageData.Instance.decisionOne = false;
+                    Debug.Log($"Setting decisionOne flag to {flag}");
                 } else if (flag == "decisionTwo") {
-                    PackageData.Instance.decisionTwo = true;
+                    PackageData.Instance.decisionTwo = false;
+                    Debug.Log($"Setting decisionTwo flag to {flag}");
                 }
                 
                 TextboxManager.Instance.QueueText(onPackageDestroyedText);

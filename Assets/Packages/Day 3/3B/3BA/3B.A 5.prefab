@@ -63,6 +63,10 @@ PrefabInstance:
       propertyPath: shouldBeDelivered
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6160374264157875991, guid: 186461c7605c7f844970e99a3060e67c, type: 3}
+      propertyPath: onPackageDeliveredText
+      value: 
+      objectReference: {fileID: 11400000, guid: cd96dbe31c4dc4b84a5f99d6ac5d1f00, type: 2}
     - target: {fileID: 6160374264157875996, guid: 186461c7605c7f844970e99a3060e67c, type: 3}
       propertyPath: m_Name
       value: 3B.A 5

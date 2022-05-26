@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Diagnostics;
 
 public class ObjectiveLabelController : MonoBehaviour {
     public static ObjectiveLabelController Instance;
@@ -10,6 +11,7 @@ public class ObjectiveLabelController : MonoBehaviour {
     [SerializeField] private TextMeshProUGUI tmp;
     private bool _messageOverriden;
     private Coroutine flashMessageCoroutine;
+    private float _lifetime;
 
     private void Awake() {
         if (Instance != null) {
@@ -21,6 +23,11 @@ public class ObjectiveLabelController : MonoBehaviour {
     }
 
     public void Update() {
+        if (_lifetime > 5f && !ShipController.Instance.HasMoved) {
+            tmp.text = "Use WASD or Arrow Keys to move!"; 
+            return;
+        }
+        
         if (_messageOverriden) return;
     
         var currentPackage = FindObjectOfType<PackageController>();
@@ -38,6 +45,8 @@ public class ObjectiveLabelController : MonoBehaviour {
             
             tmp.text = $"Current package - From: {origin.ToString()} / To: {dest.ToString()}";
         }
+
+        _lifetime += Time.deltaTime;
     }
 
     public void FlashMessage(String message, float duration, Color color) {
