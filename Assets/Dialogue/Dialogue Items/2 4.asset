@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: 2 4
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: 9bac1409f55fe4b9ba6a2372c30deb84, type: 3}
-  Name: ...
-  Text: '*sees the letter and rips it open immediately. Teary-eyed, she gives you
-    a short look of thanks before running away*'
+  Name: '"Caterpillar"'
+  Text: A young girl approaches. Her eyes widen when she sees you. She grabs the
+    letter teary-eyed, and flashes a seal of the rebellion at you before running
+    away.
   Type: 0

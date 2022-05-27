@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16bca640946e40e9b22e20fbcd14062e, type: 3}
   m_Name: 3AA 4
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: d2a8235341bfb456fb35b04936136378, type: 3}
-  Name: Character
+  Image: {fileID: 21300000, guid: 33f7a5a284f724bbf8d921ff7914a223, type: 3}
+  Name: Valerian Man
   Text: Thank you. This is most important to us.
   Type: 0

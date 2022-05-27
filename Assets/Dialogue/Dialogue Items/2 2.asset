@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: 2 2
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: 344b7a1ba766f4eabb87154e13026ee0, type: 3}
-  Name: Woman
+  Name: Glammed Girl
   Text: "No\u2026 it can't be\u2026 What do I do now?"
   Type: 0
