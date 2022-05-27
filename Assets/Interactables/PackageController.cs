@@ -102,7 +102,6 @@ public class PackageController : Draggable {
         base.Update();
 
         if (Holding) {
-            
             _entering = false;
             collider.enabled = true;
             var mousePos = GetMousePosWorldCoordinates();
