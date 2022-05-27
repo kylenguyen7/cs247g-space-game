@@ -5,6 +5,7 @@ using System;
 public class PackageController : Draggable {
     [SerializeField] private DialogueItem onPackageDeliveredText;
     [SerializeField] private DialogueItem onPackageDestroyedText;
+    [SerializeField] private String reasonForCitation;
     [SerializeField, Range(0f, 1f)] private float enterSpeed;
     [SerializeField] private AudioClip onPackageDestroyedSfx;
     [SerializeField] private AudioClip onPackageDeliveredSfx;
