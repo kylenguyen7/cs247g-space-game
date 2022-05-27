@@ -60,6 +60,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6160374264157875991, guid: 186461c7605c7f844970e99a3060e67c, type: 3}
+      propertyPath: reasonForCitation
+      value: No suspicious materials.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6160374264157875991, guid: 186461c7605c7f844970e99a3060e67c, type: 3}
       propertyPath: onPackageDeliveredText
       value: 
       objectReference: {fileID: 11400000, guid: 4c61113b8b14d4fd787fafd74be2ae3e, type: 2}
