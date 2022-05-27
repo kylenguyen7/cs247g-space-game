@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16bca640946e40e9b22e20fbcd14062e, type: 3}
   m_Name: 3AB 5
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: d2a8235341bfb456fb35b04936136378, type: 3}
-  Name: Character
-  Text: 'A young girl takes the letter with determination. '
+  Image: {fileID: 21300000, guid: 9bac1409f55fe4b9ba6a2372c30deb84, type: 3}
+  Name: '"Catepillar"'
+  Text: The same young girl recognizes you from earlier. She takes the package with
+    determination and gives you a firm nod.
   Type: 0

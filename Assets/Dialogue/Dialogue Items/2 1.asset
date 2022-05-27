@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 2 1
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: 6193aac536c9d4a7584aa445218a560f, type: 3}
-  Name: ...
+  Name: Shadowy Figure
   Text: '*A dark, shadowy figure scurries up to you and grabs the package without
     a word*'
   Type: 0

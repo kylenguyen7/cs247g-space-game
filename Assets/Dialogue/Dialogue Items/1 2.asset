@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: 1 2
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: 470a614ea4cad4a299819d465f783637, type: 3}
-  Name: Old Woman
+  Name: Valerian Old Woman
   Text: '*takes the package with a smile, then hobbles away*'
   Type: 0

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16bca640946e40e9b22e20fbcd14062e, type: 3}
   m_Name: 3B 3
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: d2a8235341bfb456fb35b04936136378, type: 3}
-  Name: Character
+  Image: {fileID: 21300000, guid: 6e2bf6928c81c49be98486450ee5be6f, type: 3}
+  Name: Selavian Young Woman
   Text: I hope this isn't bad news.
   Type: 0

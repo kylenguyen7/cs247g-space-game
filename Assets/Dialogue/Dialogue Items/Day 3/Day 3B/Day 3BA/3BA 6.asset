@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16bca640946e40e9b22e20fbcd14062e, type: 3}
   m_Name: 3BA 6
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: d2a8235341bfb456fb35b04936136378, type: 3}
-  Name: Character
+  Image: {fileID: 21300000, guid: 6a12bcd5b26ca4f4fb4ddc310fc3e677, type: 3}
+  Name: Drorian Kid
   Text: I hope it fits!
   Type: 1
