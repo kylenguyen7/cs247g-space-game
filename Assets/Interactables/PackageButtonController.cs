@@ -31,7 +31,7 @@ public class PackageButtonController : ButtonController {
                 _targetPosition = _startingPosition;
             } else {
                 collider.enabled = false;
-                _targetPosition = _startingPosition + new Vector2(0f, 5f);
+                _targetPosition = _startingPosition + new Vector2(0f, 7f);
             }
         }
     }
