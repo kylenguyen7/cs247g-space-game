@@ -13,6 +13,7 @@ public class PackageController : Draggable {
     [SerializeField] private Planet originPlanet;
     [SerializeField] private Planet destPlanet;
     [SerializeField] private AudioClip errorSfx;
+    [SerializeField] private String citationReason;
 
     public Planet OriginPlanet => originPlanet;
     public Planet DestPlanet => destPlanet;
@@ -69,7 +70,7 @@ public class PackageController : Draggable {
                 TextboxManager.Instance.QueueText(onPackageDeliveredText);
                 if (!shouldBeDelivered) {
                     TextboxManager.Instance.QueueCitation();
-                    CitationsManager.Instance.CreateCitation("Citation!");
+                    CitationsManager.Instance.CreateCitation(citationReason);
                 } else {
                     PlayerData.Instance.PackagesDeliveredToday++;
                 }
@@ -88,7 +89,7 @@ public class PackageController : Draggable {
                 TextboxManager.Instance.QueueText(onPackageDestroyedText);
                 if (shouldBeDelivered) {
                     TextboxManager.Instance.QueueCitation();
-                    CitationsManager.Instance.CreateCitation("Citation!");
+                    CitationsManager.Instance.CreateCitation(citationReason);
                 } else {
                     PlayerData.Instance.PackagesDeliveredToday++;
                 }
