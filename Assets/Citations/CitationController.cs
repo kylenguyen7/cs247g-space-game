@@ -11,8 +11,46 @@ public class CitationController : Draggable {
     [SerializeField] private TextMeshProUGUI body;
     [SerializeField] private Collider2D collider;
     [SerializeField] private Canvas canvas;
+    [SerializeField] private AudioClip onCitationDestroyedSfx;
+    [SerializeField] private DialogueItem onCitationDestroyedText;
 
     private bool _entering = true;
+    
+    private RegionController _currentRegion;
+    private RegionController CurrentRegion {
+        get => _currentRegion;
+        set {
+            // Current region is the same as last frame
+            if (_currentRegion == value) {
+                return;
+            }
+            
+            // Current region has changed; exit previous region
+            if (_currentRegion != null) {
+                _currentRegion.OnRegionExit();
+            }
+            
+            // Enter new region, if not null
+            _currentRegion = value;
+            if (_currentRegion != null) {
+                _currentRegion.OnRegionEnter();
+            }
+        }
+    }
+    
+    private new void OnMouseUp() {
+        base.OnMouseUp();
+        OnDrop(CurrentRegion);
+        CurrentRegion = null;
+    }
+    
+    private void OnDrop(RegionController region) {
+        if (region != null && region.RegionId == "destroy") {
+            GlobalAudio.Source.PlayOneShot(onCitationDestroyedSfx);
+            TextboxManager.Instance.QueueText(onCitationDestroyedText);
+            Destroy(gameObject);
+        }
+    }
 
     public void Init(String citationText) {
         switch (CitationsManager.Instance.NumCitations) {
@@ -46,6 +84,19 @@ public class CitationController : Draggable {
         if (Holding) {
             _entering = false;
             collider.enabled = true;
+            
+            var mousePos = GetMousePosWorldCoordinates();
+            var hit = Physics2D.Raycast(
+                new Vector3(mousePos.x, mousePos.y, Camera.main.transform.position.z),
+                Vector3.forward,
+                100f,
+                LayerMask.GetMask("Regions"));
+
+            if (hit.collider != null) {
+                CurrentRegion = hit.collider.GetComponent<RegionController>();
+            } else {
+                CurrentRegion = null;
+            }
         }
         
         if (_entering) {
