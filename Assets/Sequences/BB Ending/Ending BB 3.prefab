@@ -8,12 +8,32 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1113069934740264381, guid: 0b5f22855bf9e474b95d2cccd07c9f03, type: 3}
+      propertyPath: m_Size.x
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1113069934740264381, guid: 0b5f22855bf9e474b95d2cccd07c9f03, type: 3}
+      propertyPath: m_Size.y
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1113069934740264381, guid: 0b5f22855bf9e474b95d2cccd07c9f03, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: facae4a56d4e9c64590d171919a23cfb, type: 3}
+      objectReference: {fileID: 21300000, guid: 803211a54e520fc43903532805058e5a, type: 3}
+    - target: {fileID: 1113069934740264381, guid: 0b5f22855bf9e474b95d2cccd07c9f03, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2144219860621732030, guid: 0b5f22855bf9e474b95d2cccd07c9f03, type: 3}
       propertyPath: m_Name
       value: Ending BB 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6203664928971167378, guid: 0b5f22855bf9e474b95d2cccd07c9f03, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6203664928971167378, guid: 0b5f22855bf9e474b95d2cccd07c9f03, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7506670276223226171, guid: 0b5f22855bf9e474b95d2cccd07c9f03, type: 3}
       propertyPath: m_RootOrder
