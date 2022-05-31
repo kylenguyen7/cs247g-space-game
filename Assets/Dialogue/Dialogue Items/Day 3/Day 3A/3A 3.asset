@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16bca640946e40e9b22e20fbcd14062e, type: 3}
   m_Name: 3A 3
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: 5e65244616fbf46bda5a59024c21bf56, type: 3}
-  Name: Sunglasses Man
+  Image: {fileID: 21300000, guid: c0c242d34c1c94c60a14bf65714f8fc0, type: 3}
+  Name: Cecarroan Man
   Text: "You\u2026 I've heard about you. Did you deliver this on purpose? Am I allowed
     to tell you about\u2026 No, I've already said too much. It was an honor to see
     you in the flesh."
