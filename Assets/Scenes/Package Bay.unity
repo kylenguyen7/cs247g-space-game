@@ -1771,11 +1771,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 928107670907051756, guid: 5495b6d2fe629a3468e2fbff0626f32e, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 277
+      value: 225
       objectReference: {fileID: 0}
     - target: {fileID: 928107670907051756, guid: 5495b6d2fe629a3468e2fbff0626f32e, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 180
+      value: 225
       objectReference: {fileID: 0}
     - target: {fileID: 1473802454899097587, guid: 5495b6d2fe629a3468e2fbff0626f32e, type: 3}
       propertyPath: cost
@@ -1789,6 +1789,10 @@ PrefabInstance:
       propertyPath: receiptItemName
       value: Child
       objectReference: {fileID: 0}
+    - target: {fileID: 1473802454899097587, guid: 5495b6d2fe629a3468e2fbff0626f32e, type: 3}
+      propertyPath: familyMemberSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: eb2d3ef543503446495b28e3ee22da6f, type: 3}
     - target: {fileID: 4736745683035430997, guid: 5495b6d2fe629a3468e2fbff0626f32e, type: 3}
       propertyPath: m_Name
       value: Family Member (2)
@@ -4621,7 +4625,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1353941951}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63804a703cb0e024a8a0284c6e7a094f, type: 3}
   m_Name: 
@@ -4990,7 +4994,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.1981132, g: 0.19168387, b: 0.18203987, a: 1}
   m_FlipX: 0
@@ -5452,16 +5456,20 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 928107670907051756, guid: 5495b6d2fe629a3468e2fbff0626f32e, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 277
+      value: 275
       objectReference: {fileID: 0}
     - target: {fileID: 928107670907051756, guid: 5495b6d2fe629a3468e2fbff0626f32e, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 180
+      value: 275
       objectReference: {fileID: 0}
     - target: {fileID: 1473802454899097587, guid: 5495b6d2fe629a3468e2fbff0626f32e, type: 3}
       propertyPath: cost
       value: -50
       objectReference: {fileID: 0}
+    - target: {fileID: 1473802454899097587, guid: 5495b6d2fe629a3468e2fbff0626f32e, type: 3}
+      propertyPath: familyMemberSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 85fcac4eaaac144b2ab53e48d7e2154d, type: 3}
     - target: {fileID: 4736745683035430997, guid: 5495b6d2fe629a3468e2fbff0626f32e, type: 3}
       propertyPath: m_Name
       value: Family Member (1)
@@ -5561,7 +5569,7 @@ PrefabInstance:
     - target: {fileID: 8942234229302353526, guid: 5495b6d2fe629a3468e2fbff0626f32e, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: b8580efa994444d9fb2182329a0aa8c5, type: 3}
+      objectReference: {fileID: 21300000, guid: 5e47faf28a08b466a997dc92d355c8d9, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5495b6d2fe629a3468e2fbff0626f32e, type: 3}
 --- !u!224 &1884002869 stripped
@@ -6551,7 +6559,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 3b2c4961322ae48128dd7a7a1a303cc5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -6923,11 +6931,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 928107670907051756, guid: 5495b6d2fe629a3468e2fbff0626f32e, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 277
+      value: 225
       objectReference: {fileID: 0}
     - target: {fileID: 928107670907051756, guid: 5495b6d2fe629a3468e2fbff0626f32e, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 180
+      value: 225
       objectReference: {fileID: 0}
     - target: {fileID: 1473802454899097587, guid: 5495b6d2fe629a3468e2fbff0626f32e, type: 3}
       propertyPath: cost
@@ -6941,6 +6949,10 @@ PrefabInstance:
       propertyPath: receiptItemName
       value: Child
       objectReference: {fileID: 0}
+    - target: {fileID: 1473802454899097587, guid: 5495b6d2fe629a3468e2fbff0626f32e, type: 3}
+      propertyPath: familyMemberSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 95d24efbfe5a54964a65cb683789a098, type: 3}
     - target: {fileID: 4517659812519548530, guid: 5495b6d2fe629a3468e2fbff0626f32e, type: 3}
       propertyPath: m_Colors.m_ColorMultiplier
       value: 1

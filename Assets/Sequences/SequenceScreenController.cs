@@ -8,9 +8,22 @@ public class SequenceScreenController : MonoBehaviour {
     [SerializeField] private GameObject nextSequenceScreen;
     [SerializeField] private string nextSceneName;
     [SerializeField] private Animator animator;
+    [SerializeField] private bool restartScreen;
     
     public void OnMouseDown() {
-        animator.SetTrigger("fade out");
+        if (!restartScreen) {
+            animator.SetTrigger("fade out");
+        }
+    }
+
+    private void Update() {
+        if (Input.anyKey && !restartScreen) {
+            animator.SetTrigger("fade out");
+        }
+
+        if (restartScreen && Input.GetKeyDown(KeyCode.R)) {
+            SceneManager.LoadScene("Title");
+        }
     }
 
     public void DestroyMe() {

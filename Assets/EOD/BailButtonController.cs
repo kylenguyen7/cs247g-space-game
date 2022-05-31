@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BailButtonController : MonoBehaviour {
     [SerializeField] private String receiptItemName;
@@ -11,6 +12,8 @@ public class BailButtonController : MonoBehaviour {
     [SerializeField] private GameObject bailedMessage;
     [SerializeField] private AudioClip errorSfx;
     [SerializeField] private AudioClip bailSfx;
+    [SerializeField] private Image familyMemberImage;
+    [SerializeField] private Sprite familyMemberSprite;
 
     
     private void DisableBailButton() {
@@ -23,6 +26,7 @@ public class BailButtonController : MonoBehaviour {
             GlobalAudio.Source.PlayOneShot(bailSfx);
             DisableBailButton();
             BailManager.Instance.BailOut(familyMember);
+            familyMemberImage.sprite = familyMemberSprite;
         } else {
             GlobalAudio.Source.PlayOneShot(errorSfx);
         }

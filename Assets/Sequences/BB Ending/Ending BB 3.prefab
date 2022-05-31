@@ -81,11 +81,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8131235902016106978, guid: 0b5f22855bf9e474b95d2cccd07c9f03, type: 3}
       propertyPath: nextSceneName
-      value: Game Over
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8131235902016106978, guid: 0b5f22855bf9e474b95d2cccd07c9f03, type: 3}
       propertyPath: nextSequenceScreen
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 7920535003708628711, guid: 1b695fe594c03d5419928a8fbb26ad72, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b5f22855bf9e474b95d2cccd07c9f03, type: 3}

@@ -549,6 +549,8 @@ MonoBehaviour:
   bailedMessage: {fileID: 4582503827669807500}
   errorSfx: {fileID: 8300000, guid: 277874e2d390fe44382fae38893c7463, type: 3}
   bailSfx: {fileID: 8300000, guid: 3bf71c7f01c51409c9c5ba23b0fa09fe, type: 3}
+  familyMemberImage: {fileID: 8942234229302353526}
+  familyMemberSprite: {fileID: 0}
 --- !u!1 &8882157089929732607
 GameObject:
   m_ObjectHideFlags: 0
